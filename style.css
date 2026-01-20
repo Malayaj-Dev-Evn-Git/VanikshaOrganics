@@ -1,0 +1,254 @@
+/* ---------- GLOBAL ---------- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f4;
+    color: #2b2b2b;
+    overflow-x: hidden;
+  }
+  
+  h1, h2 {
+    font-weight: 600;
+    color: #1e5631;
+  }
+  
+  /* ---------- HERO SECTION ---------- */
+  .hero {
+    background: linear-gradient(rgba(30, 86, 49, 0.65), rgba(30, 86, 49, 0.85)),
+                url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') 
+                center/cover no-repeat;
+    height: 100vh;
+    padding: 0 20px;
+    position: relative;
+    color: white;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+    opacity: 0.1;
+  }
+  
+  .hero .logo {
+    width: 220px;
+    margin-bottom: 20px;
+    animation: floatLogo 4s ease-in-out infinite;
+    filter: drop-shadow(0 2px 8px rgba(255,255,255,0.4));
+  }
+  
+  @keyframes floatLogo {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-top: 10px;
+    color:#fff;
+    font-family: cursiva;
+  }
+  
+  .hero .subtext {
+    max-width: 600px;
+    margin: 15px auto;
+    font-size: 1.2rem;
+
+  }
+  
+  .email-form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .email-form input {
+    padding: 12px 18px;
+    border-radius: 30px 0 0 30px;
+    border: none;
+    outline: none;
+    width: 260px;
+  }
+  
+  .email-form button {
+    padding: 12px 25px;
+    background-color: #e6b325;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    color: #1e5631;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .email-form button:hover {
+    background-color: #f7d358;
+    transform: scale(1.05);
+  }
+  
+  /* ---------- BRAND STORY ---------- */
+  .brand-story {
+    background: linear-gradient(180deg, #fdfcf8, #f6f6f0);
+    padding: 100px 20px;
+  }
+  
+  .brand-story p {
+    max-width: 750px;
+    margin: 20px auto;
+    line-height: 1.7;
+    color: #3d3d3d;
+  }
+  
+  .story-image {
+    margin-top: 40px;
+    width: 40px;
+    height: 120px;
+    border: 3px solid #e6b325;
+    transition: transform 0.5s ease;
+  }
+  
+  .story-image:hover {
+    transform: scale(1.03);
+    
+  }
+
+  /* ---------- BRAND STORY IMAGE GALLERY ---------- */
+.brand-gallery {
+    margin-top: 30px;
+  }
+  
+  .brand-gallery .gallery-img {
+   
+    height: 320px;
+    object-fit: cover;
+    border: 2px solid #1e5631;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand-gallery .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(30, 86, 49, 0.2);
+    border-color: #2f7b46;
+  }
+  
+  /* Responsive tweak for small screens */
+  @media (max-width: 768px) {
+    .brand-gallery .gallery-img {
+      height: 180px;
+    }
+  }
+  
+  
+  /* ---------- WHAT TO EXPECT (Card View) ---------- */
+.expect {
+    background: linear-gradient(180deg, #f7f9f6 0%, #eef4ee 100%);
+    padding: 100px 20px;
+  }
+  
+  .expect h2 {
+    color: #1e5631;
+    font-weight: 600;
+  }
+  
+  .expect-card {
+    border-radius: 15px;
+    border: 2px solid #1e5631;
+    padding: 30px 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .expect-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(30, 86, 49, 0.15);
+  }
+  
+  .expect-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+  }
+  
+  .expect-card:hover .icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  
+  .expect-card h5 {
+    color: #1e5631;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .expect-card p {
+    color: #4b4b4b;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .expect {
+      padding: 70px 15px;
+    }
+    .expect-card {
+      padding: 25px;
+    }
+  }
+  
+  
+  /* ---------- FOOTER ---------- */
+  .footer {
+    background: #1e5631;
+    color: white;
+    padding: 40px 20px 20px;
+    position: relative;
+  }
+  
+  .footer .social-icons a {
+    color: #e6b325;
+    margin: 0 12px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+  }
+  
+  .footer .contact-link {
+    color: #f7d358;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer .contact-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* ---------- MEDIA QUERIES ---------- */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.1rem;
+    }
+  
+    .email-form {
+      flex-direction: column;
+    }
+  
+    .email-form input, .email-form button {
+      border-radius: 30px;
+      width: 80%;
+      margin: 5px 0;
+    }
+  }
+  
