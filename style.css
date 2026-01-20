@@ -1,5 +1,12 @@
-/* ---------- GLOBAL ---------- */
-body {
+/* =====================================================
+   GLOBAL STYLES
+   ===================================================== */
+   * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f4;
     color: #2b2b2b;
@@ -11,67 +18,96 @@ body {
     color: #1e5631;
   }
   
-  /* ---------- HERO SECTION ---------- */
+  
+  /* =====================================================
+     HERO SECTION
+     ===================================================== */
   .hero {
-    background: linear-gradient(rgba(30, 86, 49, 0.65), rgba(30, 86, 49, 0.85)),
-                url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') 
-                center/cover no-repeat;
-    height: 100vh;
-    padding: 0 20px;
     position: relative;
-    color: white;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    padding: 60px 20px;
+    background:
+      linear-gradient(rgba(30, 86, 49, 0.65), rgba(30, 86, 49, 0.85)),
+      url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80')
+      center / cover no-repeat;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
   }
   
   .hero::after {
     content: '';
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 50px;
     background: url('https://www.transparenttextures.com/patterns/white-diamond.png');
     opacity: 0.1;
   }
   
+  /* Logo */
   .hero .logo {
-    width: 220px;
+    width: min(220px, 65vw);
     margin-bottom: 20px;
     animation: floatLogo 4s ease-in-out infinite;
     filter: drop-shadow(0 2px 8px rgba(255,255,255,0.4));
   }
   
   @keyframes floatLogo {
-    0%, 100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
   }
   
+  /* Hero Heading */
   .hero h1 {
-    font-size: 2.8rem;
-    margin-top: 10px;
-    color:#fff;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    margin-bottom: 15px;
+    color: #fff;
     font-family: cursiva;
   }
   
-  .hero .subtext {
-    max-width: 600px;
-    margin: 15px auto;
-    font-size: 1.2rem;
-
+  /* Boxed Hero Text */
+  .text-box {
+    max-width: 760px;
+    margin: 0 auto 25px;
+    padding: 18px 22px;
+    border-radius: 14px;
   }
   
+  .hero .text-box {
+    color: #fff;
+    backdrop-filter: blur(6px);
+  }
+  
+  .text-box p {
+    margin: 0;
+    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
+    line-height: 1.6;
+  }
+  
+  
+  /* =====================================================
+     EMAIL FORM (INLINE ALWAYS)
+     ===================================================== */
   .email-form {
-    margin-top: 25px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    max-width: 420px;
   }
   
   .email-form input {
+    flex: 1;
     padding: 12px 18px;
-    border-radius: 30px 0 0 30px;
     border: none;
     outline: none;
-    width: 260px;
+    border-radius: 30px 0 0 30px;
+    min-width: 0;
   }
   
   .email-form button {
@@ -82,6 +118,7 @@ body {
     color: #1e5631;
     font-weight: 600;
     cursor: pointer;
+    white-space: nowrap;
     transition: all 0.3s ease;
   }
   
@@ -90,319 +127,11 @@ body {
     transform: scale(1.05);
   }
   
-  /* ---------- BRAND STORY ---------- */
-  .brand-story {
-    background: linear-gradient(180deg, #fdfcf8, #f6f6f0);
-    padding: 100px 20px;
-  }
   
-  .brand-story p {
-    max-width: 750px;
-    margin: 20px auto;
-    line-height: 1.7;
-    color: #3d3d3d;
-  }
-  
-  .story-image {
-    margin-top: 40px;
-    width: 40px;
-    height: 120px;
-    border: 3px solid #e6b325;
-    transition: transform 0.5s ease;
-  }
-  
-  .story-image:hover {
-    transform: scale(1.03);
-    
-  }
-
-  /* ---------- BRAND STORY IMAGE GALLERY ---------- */
-.brand-gallery {
-    margin-top: 30px;
-  }
-  
-  .brand-gallery .gallery-img {
-   
-    height: 320px;
-    object-fit: cover;
-    border: 2px solid #1e5631;
-    transition: all 0.4s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .brand-gallery .gallery-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(30, 86, 49, 0.2);
-    border-color: #2f7b46;
-  }
-  
-  /* Responsive tweak for small screens */
-  @media (max-width: 768px) {
-    .brand-gallery .gallery-img {
-      height: 180px;
-    }
-  }
-  
-  
-  /* ---------- WHAT TO EXPECT (Card View) ---------- */
-.expect {
-    background: linear-gradient(180deg, #f7f9f6 0%, #eef4ee 100%);
-    padding: 100px 20px;
-  }
-  
-  .expect h2 {
-    color: #1e5631;
-    font-weight: 600;
-  }
-  
-  .expect-card {
-    border-radius: 15px;
-    border: 2px solid #1e5631;
-    padding: 30px 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .expect-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(30, 86, 49, 0.15);
-  }
-  
-  .expect-card .icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    transition: transform 0.4s ease;
-  }
-  
-  .expect-card:hover .icon {
-    transform: scale(1.15) rotate(-5deg);
-  }
-  
-  .expect-card h5 {
-    color: #1e5631;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .expect-card p {
-    color: #4b4b4b;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .expect {
-      padding: 70px 15px;
-    }
-    .expect-card {
-      padding: 25px;
-    }
-  }
-  
-  
-  /* ---------- FOOTER ---------- */
-  .footer {
-    background: #1e5631;
-    color: white;
-    padding: 40px 20px 20px;
-    position: relative;
-  }
-  
-  .footer .social-icons a {
-    color: #e6b325;
-    margin: 0 12px;
-    font-size: 1.8rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .footer .social-icons a:hover {
-    color: #fff;
-    transform: scale(1.2);
-  }
-  
-  .footer .contact-link {
-    color: #f7d358;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  .footer .contact-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* ---------- MEDIA QUERIES ---------- */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.1rem;
-    }
-  
-    .email-form {
-      flex-direction: column;
-    }
-  
-    .email-form input, .email-form button {
-      border-radius: 30px;
-      width: 80%;
-      margin: 5px 0;
-    }
-  }
-
-  /* ===============================
-   RESPONSIVE ENHANCEMENTS
-   =============================== */
-
-/* Fluid typography */
-.hero h1 {
-  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
-}
-
-.brand-story h2,
-.expect h2 {
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-}
-
-.hero .subtext,
-.hero p {
-  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
-}
-
-/* Hero height fix */
-.hero {
-  min-height: 100vh;
-  height: auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-/* Logo responsiveness */
-.hero .logo {
-  width: min(220px, 65vw);
-}
-
-/* Email form improvements */
-.email-form {
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.email-form input {
-  width: min(260px, 90%);
-}
-
-.email-form button {
-  width: auto;
-}
-
-/* Gallery image consistency */
-.brand-gallery .gallery-img {
-  height: clamp(160px, 30vw, 320px);
-}
-
-/* Reduce heavy padding on small screens */
-@media (max-width: 576px) {
-  .brand-story,
-  .expect {
-    padding: 60px 15px;
-  }
-
-  .footer {
-    padding: 30px 15px 15px;
-  }
-
-  .email-form input,
-  .email-form button {
-    width: 100%;
-    border-radius: 30px;
-  }
-}
-
-/* Tablet optimization */
-@media (max-width: 992px) {
-  .hero h1 {
-    text-align: center;
-  }
-
-  .expect-card {
-    padding: 25px 18px;
-  }
-}
-
-/* Ultra small phones */
-@media (max-width: 360px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .footer .social-icons a {
-    font-size: 1.4rem;
-    margin: 0 8px;
-  }
-}
-/* FORCE email input + button to stay inline */
-.email-form {
-  display: flex !important;
-  flex-wrap: nowrap !important;
-  justify-content: center;
-  align-items: stretch;
-  max-width: 100%;
-}
-
-/* Input field */
-.email-form input {
-  flex: 1;
-  min-width: 0;
-  max-width: 260px;
-  border-radius: 30px 0 0 30px !important;
-}
-
-/* Button */
-.email-form button {
-  white-space: nowrap;
-  border-radius: 0 30px 30px 0 !important;
-}
-
-/* Mobile fine-tuning */
-@media (max-width: 576px) {
-  .email-form input {
-    max-width: 70%;
-  }
-
-  .email-form button {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-}
-/* Boxed paragraph styling */
-.text-box {
-  max-width: 760px;
-  margin: 20px auto 0;
-  padding: 18px 22px;
-  border-radius: 14px;
-  
-}
-
-/* Hero paragraph override */
-.hero .text-box {
-  
-  color: #fff;
-  backdrop-filter: blur(6px);
-}
-
-/* Mobile adjustment */
-@media (max-width: 576px) {
-  .text-box {
-    padding: 15px 16px;
-  }
-}
-/* ===============================
-   HERO SOCIAL ICONS (UNDER FORM)
-   =============================== */
-   .hero-social {
+  /* =====================================================
+     HERO SOCIAL ICONS
+     ===================================================== */
+  .hero-social {
     margin-top: 18px;
     display: flex;
     justify-content: center;
@@ -429,10 +158,131 @@ body {
     transform: translateY(-3px) scale(1.1);
   }
   
-  /* Mobile spacing */
+  
+  /* =====================================================
+     BRAND STORY
+     ===================================================== */
+  .brand-story {
+    background: linear-gradient(180deg, #fdfcf8, #f6f6f0);
+    padding: 90px 20px;
+    text-align: center;
+  }
+  
+  .brand-story h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+  
+  .brand-story p {
+    max-width: 750px;
+    margin: 20px auto;
+    line-height: 1.7;
+    color: #3d3d3d;
+  }
+  
+  /* Gallery */
+  .brand-gallery {
+    margin-top: 35px;
+  }
+  
+  .brand-gallery .gallery-img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    border: 2px solid #1e5631;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+  
+  .brand-gallery .gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 22px rgba(30, 86, 49, 0.2);
+  }
+  
+  
+  /* =====================================================
+     WHAT TO EXPECT
+     ===================================================== */
+  .expect {
+    background: linear-gradient(180deg, #f7f9f6, #eef4ee);
+    padding: 90px 20px;
+    text-align: center;
+  }
+  
+  .expect h2 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 50px;
+  }
+  
+  .expect-card {
+    height: 100%;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 2px solid #1e5631;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease;
+  }
+  
+  .expect-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(30, 86, 49, 0.15);
+  }
+  
+  .expect-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .expect-card h5 {
+    color: #1e5631;
+    font-weight: 600;
+  }
+  
+  .expect-card p {
+    color: #4b4b4b;
+    line-height: 1.6;
+  }
+  
+  
+  /* =====================================================
+     FOOTER
+     ===================================================== */
+  .footer {
+    background: #1e5631;
+    color: #fff;
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+  
+  .footer .social-icons a {
+    color: #e6b325;
+    margin: 0 12px;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+  }
+  
+  
+  /* =====================================================
+     RESPONSIVE BREAKPOINTS
+     ===================================================== */
   @media (max-width: 576px) {
-    .hero-social {
-      margin-top: 15px;
+    .hero {
+      padding: 50px 15px;
+    }
+  
+    .text-box {
+      padding: 15px;
+    }
+  
+    .email-form {
+      max-width: 100%;
     }
   
     .hero-social a {
@@ -442,4 +292,9 @@ body {
     }
   }
   
+  @media (max-width: 360px) {
+    .hero h1 {
+      font-size: 1.6rem;
+    }
+  }
   
