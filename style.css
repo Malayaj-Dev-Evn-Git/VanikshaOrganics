@@ -251,4 +251,195 @@ body {
       margin: 5px 0;
     }
   }
+
+  /* ===============================
+   RESPONSIVE ENHANCEMENTS
+   =============================== */
+
+/* Fluid typography */
+.hero h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+.brand-story h2,
+.expect h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.hero .subtext,
+.hero p {
+  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+}
+
+/* Hero height fix */
+.hero {
+  min-height: 100vh;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Logo responsiveness */
+.hero .logo {
+  width: min(220px, 65vw);
+}
+
+/* Email form improvements */
+.email-form {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.email-form input {
+  width: min(260px, 90%);
+}
+
+.email-form button {
+  width: auto;
+}
+
+/* Gallery image consistency */
+.brand-gallery .gallery-img {
+  height: clamp(160px, 30vw, 320px);
+}
+
+/* Reduce heavy padding on small screens */
+@media (max-width: 576px) {
+  .brand-story,
+  .expect {
+    padding: 60px 15px;
+  }
+
+  .footer {
+    padding: 30px 15px 15px;
+  }
+
+  .email-form input,
+  .email-form button {
+    width: 100%;
+    border-radius: 30px;
+  }
+}
+
+/* Tablet optimization */
+@media (max-width: 992px) {
+  .hero h1 {
+    text-align: center;
+  }
+
+  .expect-card {
+    padding: 25px 18px;
+  }
+}
+
+/* Ultra small phones */
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .footer .social-icons a {
+    font-size: 1.4rem;
+    margin: 0 8px;
+  }
+}
+/* FORCE email input + button to stay inline */
+.email-form {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+/* Input field */
+.email-form input {
+  flex: 1;
+  min-width: 0;
+  max-width: 260px;
+  border-radius: 30px 0 0 30px !important;
+}
+
+/* Button */
+.email-form button {
+  white-space: nowrap;
+  border-radius: 0 30px 30px 0 !important;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 576px) {
+  .email-form input {
+    max-width: 70%;
+  }
+
+  .email-form button {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+/* Boxed paragraph styling */
+.text-box {
+  max-width: 760px;
+  margin: 20px auto 0;
+  padding: 18px 22px;
+  border-radius: 14px;
+  
+}
+
+/* Hero paragraph override */
+.hero .text-box {
+  
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+/* Mobile adjustment */
+@media (max-width: 576px) {
+  .text-box {
+    padding: 15px 16px;
+  }
+}
+/* ===============================
+   HERO SOCIAL ICONS (UNDER FORM)
+   =============================== */
+   .hero-social {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .hero-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-social a:hover {
+    background: #e6b325;
+    color: #1e5631;
+    transform: translateY(-3px) scale(1.1);
+  }
+  
+  /* Mobile spacing */
+  @media (max-width: 576px) {
+    .hero-social {
+      margin-top: 15px;
+    }
+  
+    .hero-social a {
+      width: 38px;
+      height: 38px;
+      font-size: 1.1rem;
+    }
+  }
+  
   
